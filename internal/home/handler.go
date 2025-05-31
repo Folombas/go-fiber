@@ -14,5 +14,5 @@ func NewHandler(router fiber.Router) {
 }
 
 func (h *HomeHandler) home(c *fiber.Ctx) error {
-	return c.SendString("Hello, Fiber!")
+	return c.SendString("Hello, framework Fiber!")
 }
