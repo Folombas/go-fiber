@@ -6,9 +6,6 @@ type HomeHandler struct {
 	router fiber.Router
 }
 
-// /v1/api/
-// /v1/api/error
-
 func NewHandler(router fiber.Router) {
 	h := &HomeHandler{
 		router: router,
