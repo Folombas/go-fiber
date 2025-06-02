@@ -6,13 +6,22 @@ type HomeHandler struct {
 	router fiber.Router
 }
 
+// /v1/api/
+// /v1/api/error
+
 func NewHandler(router fiber.Router) {
 	h := &HomeHandler{
 		router: router,
 	}
-	h.router.Get("/", h.home)
+	api := h.router.Group("/api")
+	api.Get("/", h.home)
+	api.Get("/error", h.error)
 }
 
 func (h *HomeHandler) home(c *fiber.Ctx) error {
-	return c.SendString("Hello, Fiber!")
+	return c.SendString("Hello")
+}
+
+func (h *HomeHandler) error(c *fiber.Ctx) error {
+	return c.SendString("Error")
 }
