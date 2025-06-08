@@ -1,7 +1,11 @@
 package layout
 
+css headerClass(percent int) {
+    background: { "#222222" };
+}
+
 templ Header() {
-    <div class="header">
+    <div class={headerClass(50)}>
         { children... }
     </div>
 }
