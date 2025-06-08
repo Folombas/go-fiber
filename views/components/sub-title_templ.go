@@ -8,21 +8,18 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func titleClass() templ.CSSClass {
+func subTitleClass() templ.CSSClass {
 	templ_7745c5c3_CSSBuilder := templruntime.GetBuilder()
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`font-size`, "70px")))
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`color`, "#FFFFFF")))
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`font-width`, "bold")))
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`margin-bottom`, "12px")))
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`margin-top`, "0px")))
-	templ_7745c5c3_CSSID := templ.CSSID(`titleClass`, templ_7745c5c3_CSSBuilder.String())
+	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`font-size`, "16px")))
+	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`color`, "#BABABA")))
+	templ_7745c5c3_CSSID := templ.CSSID(`subTitleClass`, templ_7745c5c3_CSSBuilder.String())
 	return templ.ComponentCSSClass{
 		ID:    templ_7745c5c3_CSSID,
 		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
 	}
 }
 
-func Title(title string) templ.Component {
+func SubTitle(text string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -43,7 +40,7 @@ func Title(title string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var2 = []any{titleClass()}
+		var templ_7745c5c3_Var2 = []any{subTitleClass()}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -55,7 +52,7 @@ func Title(title string) templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var2).String())
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/title.templ`, Line: 1, Col: 0}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/sub-title.templ`, Line: 1, Col: 0}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
@@ -66,9 +63,9 @@ func Title(title string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 string
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(title)
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(text)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/title.templ`, Line: 12, Col: 35}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/sub-title.templ`, Line: 9, Col: 33}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
