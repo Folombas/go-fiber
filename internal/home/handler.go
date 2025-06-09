@@ -37,6 +37,6 @@ func (h *HomeHandler) error(c *fiber.Ctx) error {
 		Bool("isAdmin", true).
 		Str("email", "a@a.ru").
 		Int("id", 10).
-		Msg("Инфо")
+		Msg("Инфа")
 	return c.SendString("Error")
 }
