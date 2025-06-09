@@ -1,13 +1,26 @@
 package layout
 
-css headerClass(percent int) {
-    background: { "#222222" };
+css headerClass() {
+    background: { "222222" };
     text-align: { "center" };
 }
 
 templ Header() {
-    <div class={headerClass(50)}>
+    @HeaderStyle()
+    <div class="header">
         @Menu()
         { children... }
     </div>
+}
+
+templ HeaderStyle() {
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background: #222222;
+        }
+    </style>
 }
