@@ -3,6 +3,7 @@ package main
 import (
 	"folocode/go-fiber/config"
 	"folocode/go-fiber/internal/home"
+	"folocode/go-fiber/internal/vacancy"
 	"folocode/go-fiber/pkg/logger"
 
 	"github.com/gofiber/contrib/fiberzerolog"
@@ -24,6 +25,7 @@ func main() {
 	app.Static("/public", "./public")
 
 	home.NewHandler(app, customLogger)
+	vacancy.NewHandler(app, customLogger)
 
 	app.Listen(":8080")
 }
