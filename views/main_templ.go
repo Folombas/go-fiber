@@ -129,7 +129,7 @@ func MainStyle() templ.Component {
 			templ_7745c5c3_Var4 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<style>\r\n    .main__submit-form {\r\n        background: rgba(48, 150, 137, 0.10);\r\n    }\r\n</style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "<style>\r\n    .main__submit-form {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        background: rgba(48, 150, 137, 0.10);\r\n        padding: 60px 0 120px 0;\r\n    }\r\n</style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
