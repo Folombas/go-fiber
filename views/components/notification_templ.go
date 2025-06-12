@@ -104,7 +104,7 @@ func NotificationStyle() templ.Component {
 			templ_7745c5c3_Var5 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\r\n    .notification {\r\n        width: 100%;\r\n        padding: 30px;\r\n        color: var(--color-white);\r\n        font-size: 16px;\r\n    }\r\n    .notification_success {\r\n        background-color: #31b4a3;\r\n    }\r\n    .notification_fail {\r\n        background-color: #b43133;\r\n    }\r\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<style>\r\n    .notification {\r\n        width: 100%;\r\n        padding: 30px;\r\n        color: var(--color-white);\r\n        font-size: 16px;\r\n    }\r\n    .notification_success {\r\n        background-color: #31b4a3;\r\n    }\r\n    .notification_fail {\r\n        background-color: #b43133;\r\n    }\r\n    .htmx-swapping .notification {\r\n        opacity: 0;\r\n        transition: opacity 1s ease-out;\r\n    }\r\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
