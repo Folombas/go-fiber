@@ -38,7 +38,7 @@ func (h *VacancyHandler) createVacancy(c *fiber.Ctx) error {
 	errors := validate.Validate(
 		&validators.EmailIsPresent{Name: "Email", Field: form.Email, Message: "Email не задан или неверный"},
 		&validators.StringIsPresent{Name: "Location", Field: form.Location, Message: "Расположение не задано"},
-		&validators.StringIsPresent{Name: "Type", Field: form.Type, Message: "Сфера компании не задана"},
+		&validators.StringIsPresent{Name: "Type", Field: form.Type, Message: "Сфера организации не задана"},
 		&validators.StringIsPresent{Name: "Company", Field: form.Company, Message: "Название компании не задано"},
 		&validators.StringIsPresent{Name: "Role", Field: form.Role, Message: "Должность не задана"},
 		&validators.StringIsPresent{Name: "Salary", Field: form.Salary, Message: "Зарплата не задана"},
