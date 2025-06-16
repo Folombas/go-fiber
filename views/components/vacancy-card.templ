@@ -1,7 +1,6 @@
 package components
 
 import "time"
-import string
 
 type VacancyCardProps struct {
     Createdat time.Time
@@ -17,14 +16,14 @@ templ VacancyCard(props VacancyCardProps) {
     @VacancyCardStyle()
     <div class="vacancy-card">
         <div>
-            <span class="vacancy-card__createdat">{  props.Createdat.String() }</span>
+            <span class="vacancy-card__createdat">{ props.Createdat.String() }</span>
         </div>
         <div class="vacancy-card__title">
             <div class="vacancy-card__role">{ props.Role }</div>
             <div class="vacancy-card__company">{ props.Company }</div>
         </div>
         <div class="vacancy-card__footer">
-            <div class="vacancy-card__stat">
+            <div class="vacancy-card__stats">
                 <div class="vacancy-card__stat">
                     <img src="/public/icons/company-type.svg" alt="Иконка портфеля">
                     <span>{ props.CompanyType }</span>
@@ -54,7 +53,7 @@ templ VacancyCardStyle() {
             padding: 40px;
             border-radius: 20px;
             background: var(--color-white);
-            box-shadow: 0px 3px 8px 0px rgba(111, 232, 216, 0.08);
+            box-shadow: 0px 3px 8px 0px rgba(48, 150, 137, 0.08);
         }
         .vacancy-card__createdat {
             border-radius: 8px;
