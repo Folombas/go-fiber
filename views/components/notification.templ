@@ -13,7 +13,7 @@ templ Notification(message string, status NotificationStatus) {
         "notification", 
         templ.KV("notification_success", status == NotificationSuccess),
         templ.KV("notification_fail", status == NotificationFail),
-        }>{message}</div>
+    }>{message}</div>
 }
 
 templ NotificationStyle() {
