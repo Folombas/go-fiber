@@ -63,49 +63,53 @@ func VacancyList(vacancies []vacancy.Vacancy, pagesCount, page int) templ.Compon
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><div class=\"vacancy-list__pagination\"><div class=\"vacancy-list__pagination-item\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if page != 1 {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<a href=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<img src=\"/public/icons/chevron-left.svg\" alt=\"Стрелка влево\"> <a href=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var2 templ.SafeURL
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(fmt.Sprintf("/?page=%d", page-1)))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/widgets/vacancy-list.templ`, Line: 27, Col: 74}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/widgets/vacancy-list.templ`, Line: 29, Col: 78}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\">Предыдущие</a> ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\">Предыдущие</a>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "</div><div class=\"vacancy-list__pagination-item\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
 		if page != pagesCount {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "<a href=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<img src=\"/public/icons/chevron-right.svg\" alt=\"Стрелка справо\"> <a href=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 templ.SafeURL
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(fmt.Sprintf("/?page=%d", page+1)))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/widgets/vacancy-list.templ`, Line: 30, Col: 74}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/widgets/vacancy-list.templ`, Line: 35, Col: 78}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "\">Следующие</a>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "\">Следующие</a>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "</div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -134,7 +138,7 @@ func VacancyListStyle() templ.Component {
 			templ_7745c5c3_Var4 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "<style>\r\n    .vacancy-list__wrapper {\r\n        width: 100%;\r\n        max-width: 1296px;\r\n        margin: 0 auto;\r\n        padding: 60px 0;\r\n    }\r\n    .vacancy-list__wrapper p {\r\n        margin-bottom: 60px;\r\n    }\r\n    .vacancy-list {\r\n        display: flex;\r\n        align-items: center;\r\n        flex-direction: column;\r\n        gap: 24px;\r\n    }\r\n</style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "<style>\r\n    .vacancy-list__wrapper {\r\n        width: 100%;\r\n        max-width: 1296px;\r\n        margin: 0 auto;\r\n        padding: 60px 0;\r\n    }\r\n    .vacancy-list__wrapper p {\r\n        margin-bottom: 60px;\r\n    }\r\n    .vacancy-list {\r\n        display: flex;\r\n        align-items: center;\r\n        flex-direction: column;\r\n        gap: 24px;\r\n    }\r\n    .vacancy-list__paginaton {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        gap: 24px;\r\n    }\r\n    .vacancy-list__paginaton-item {\r\n        display: flex;\r\n        gap: 8px;\r\n        align-items: center;\r\n    }\r\n    .vacancy-list__paginaton-item a {\r\n        text-decoration: none;\r\n        color: #6C757D;\r\n    }\r\n    .vacancy-list__paginaton-item a:hover {\r\n        text-decoration: none;\r\n        color: #545a60;\r\n    }\r\n</style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
