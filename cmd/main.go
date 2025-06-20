@@ -6,6 +6,7 @@ import (
 	"folocode/go-fiber/internal/vacancy"
 	"folocode/go-fiber/pkg/database"
 	"folocode/go-fiber/pkg/logger"
+	"folocode/go-fiber/pkg/middleware"
 	"time"
 
 	"github.com/gofiber/contrib/fiberzerolog"
@@ -39,6 +40,7 @@ func main() {
 	store := session.New(session.Config{
 		Storage: storage,
 	})
+	app.Use(middleware.AuthMiddleware(store))
 
 	// Repositories
 	vacancyRepo := vacancy.NewVacancyRepository(dbpool, customLogger)
