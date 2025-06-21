@@ -3,6 +3,7 @@ package main
 import (
 	"folocode/go-fiber/config"
 	"folocode/go-fiber/internal/home"
+	"folocode/go-fiber/internal/sitemap"
 	"folocode/go-fiber/internal/vacancy"
 	"folocode/go-fiber/pkg/database"
 	"folocode/go-fiber/pkg/logger"
@@ -48,6 +49,7 @@ func main() {
 	// Handler
 	home.NewHandler(app, customLogger, vacancyRepo, store)
 	vacancy.NewHandler(app, customLogger, vacancyRepo)
+	sitemap.NewHandler(app)
 
 	app.Listen(":8080")
 }
