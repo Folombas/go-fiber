@@ -4,6 +4,7 @@ import "time"
 import "github.com/rvflash/elapsed"
 
 type VacancyCardProps struct {
+    Id int
     Createdat time.Time
     Role string
     Location string
@@ -39,7 +40,7 @@ templ VacancyCard(props VacancyCardProps) {
                     <span>{ props.Location }</span>
                 </div>
             </div>
-            @LinkButton("") {
+            @Button(templ.JSFuncCall("submitHandler", templ.JSExpression("event"), props.Email)) {
                 <span>Откликнуться</span>
             }
         </div>
